@@ -2,6 +2,11 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <iomanip>
+#include <bitset>
+#include <string>
+#include <exception>
+
 using namespace std;
 
 
@@ -9,14 +14,14 @@ using namespace std;
 
 class FILE_CONFIGURATOR
 {
-	string file_position;
+	string file_path = "WORDS.txt";
 	fstream wordsFile;
-	int getBinary(string word);
-	string getBinary(int index);
+	
 public:
 	string getWord(int index);
+	vector<string> getWords();
 	void addWord(string word);
 	int getSize();
-	vector <string> show();
+	bool is_empty();
 };
 

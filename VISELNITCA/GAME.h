@@ -7,16 +7,20 @@ using namespace std;
 
 class GAME
 {
+	unsigned int lives;
 	FILE_CONFIGURATOR File;
 	string word;
-	string playerWord = "";
+	vector<string> playerWord;
 	bool win;
 	unsigned int attempts;
 	bool isCorrect(string a);
-	bool isWin(string word);
+	bool isWord(string word);
 public:
-	void start();
-	string is(string word);
+	vector<string> getWord();
+	int getLives();
+	int getAttempts();
+	void start(int times);
+	void is(string word);
 	void finishGame();
 	bool isWin();
 };
