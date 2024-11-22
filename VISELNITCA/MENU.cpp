@@ -6,12 +6,11 @@
 
 
 MENU::MENU() {
-	whileMenu = true;
-	position = 0;
+	int position = 0;
 	if (File.is_empty()) {
 		addWordMenu();
 	}
-	while (whileMenu) {
+	while (true) {
 		system("CLS");
 		cout << ">START GAME<";
 		if (position == 0)cout << "<=";
@@ -29,7 +28,7 @@ MENU::MENU() {
 		case 72: position--; break;
 		case 80: position++; break;
 		case 13: {
-			if (position == 0) { gameMenu(); }
+			if (position == 0) gameMenu(); 
 			if (position == 1) addWordMenu();
 			if (position == 2) wordsList();
 			break;
@@ -68,8 +67,8 @@ void MENU::wordsList() {
 
 
 void MENU::levelOfDifficult() {
-	whileMenu = true;
-	position = 0;
+	bool whileMenu = true;
+	int position = 0;
 	while (whileMenu) {
 		system("CLS");
 		cout << ">EASY<";
@@ -124,6 +123,5 @@ void MENU::gameMenu() {
 	for (string i : word) { cout << i << " "; }
 	if (win) cout << "\nYOU WIN" << "\nLIVES:" << lives << "\nATTEMPTS: " << attempts;
 	else if (!win) cout << "\nYOU FAIL" << "\nLIVES:" << lives << "\nATTEMPTS: " << attempts;
-	key = _getch();
-
+	trash = _getch();
 }

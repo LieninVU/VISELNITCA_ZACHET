@@ -10,8 +10,6 @@ class MENU
 {
 	FILE_CONFIGURATOR File;
 	GAME game;
-	int position;
-	bool whileMenu;
 	char key;
 	string trash;
 	void addWordMenu();
