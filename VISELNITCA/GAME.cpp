@@ -5,6 +5,7 @@
 
 
 void GAME::start(int times) {
+	playerWord.clear();
 	attempts = 0;
 	lives = times;
 	win = false;
